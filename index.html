@@ -1,52 +1,41 @@
-<!-- notification.php -->
+<!-- notification.html -->
 
-<?php
-// Check if the system date is after 01-01-2024
-$currentDate = date('Y-m-d');
-$expirationDate = '2024-01-17';
+<div id="notification-container" class="notification-container">
+    <div class="notification-columns">
+        <!-- First Column for Text Content -->
+        <div class="notification-text-column">
+            <div class="notification-content">
+                <div class="notification-header">
+                    <i class="material-icons large warning-icon">warning_amber</i>
+                    <h2>Software License Expired</h2>
+                    <p class="notification-text">Dear valued user,</p>
+                    <p class="notification-text">It appears that your software license has expired.</p>
+                    <p class="notification-text">To continue enjoying uninterrupted access to our software and receiving updates, please renew your license.</p>
+                </div>
+                <div class="notification-warning">
+                    <p class="warning-text">Warning: Unauthorized use of this software is strictly prohibited and may result in legal action.</p>
+                    <p class="warning-text">By continuing to use this software without a valid license, you acknowledge and agree to the terms and conditions outlined in the End User License Agreement (EULA).</p>
+                    <p class="warning-text">Legal consequences may include but are not limited to fines, penalties, and injunctive relief. The software developer reserves the right to pursue all available legal remedies.</p>
+                </div>
+                <a href="https://www.instagram.com/aaqibjeelani" target="_blank"><i class="material-icons large help-icon">help</i></a>
+                <p class="warning-text"> Contact Software Developer Mr. Aaqib Jeelani.</p>
+            </div>
+        </div>
 
-if ($currentDate > $expirationDate) {
-    // Display the notification only if the system date is after 01-01-2024
-    echo '<div id="notification-container" class="notification-container">';
-    echo '<div class="notification-columns">';
-    
-    // First Column for Text Content
-    echo '<div class="notification-text-column">';
-    echo '<div class="notification-content">';
-    echo '<div class="notification-header">';
-    echo '<i class="material-icons large warning-icon">warning_amber</i>';
-    echo '<h2>Software License Expired</h2>';
-    echo '<p class="notification-text">Dear valued user,</p>';
-    echo '<p class="notification-text">It appears that your software license has expired.</p>';
-    echo '<p class="notification-text">To continue enjoying uninterrupted access to our software and receiving updates, please renew your license.</p>';
-    echo '</div>';
-    echo '<div class="notification-warning">';
-    echo '<p class="warning-text">Warning: Unauthorized use of this software is strictly prohibited and may result in legal action.</p>';
-    echo '<p class="warning-text">By continuing to use this software without a valid license, you acknowledge and agree to the terms and conditions outlined in the End User License Agreement (EULA).</p>';
-    echo '<p class="warning-text">Legal consequences may include but are not limited to fines, penalties, and injunctive relief. The software developer reserves the right to pursue all available legal remedies.</p>';
-    echo '</div>';
-    echo '<a href="https://www.instagram.com/aaqibjeelani" target="_blank"><i class="material-icons large help-icon">help</i></a>';
-    echo '<p class="warning-text"> Contact Software Developer Mr. Aaqib Jeelani.</p>';
-    echo '</div>';
-    echo '</div>';
-    
-    // Second Column (Blank)
-    echo '<div class="notification-blank-column"></div>';
-    
-    // Third Column for Payment Image
-    echo '<div class="notification-image-column">';
-    echo '<img src="includes/upipayment.jpg" alt="Payment Image" class="payment-image">';
-    echo '<p class="payment-text"> Please Pay using any UPI Payment App to Reactivate the Software.</p>';
-    echo '</div>';
-    
-    echo '</div>'; // Close .notification-columns
-    echo '</div>'; // Close #notification-container
-}
-?>
+        <!-- Second Column (Blank) -->
+        <div class="notification-blank-column"></div>
+
+        <!-- Third Column for Payment Image -->
+        <div class="notification-image-column">
+            <img src="includes/upipayment.jpg" alt="Payment Image" class="payment-image">
+            <p class="payment-text"> Please Pay using any UPI Payment App to Reactivate the Software.</p>
+        </div>
+    </div>
+</div>
 
 <script>
     // Handle the close button click event
-    document.getElementById('close-notification').addEventListener('click', function() {
+    document.getElementById('close-notification').addEventListener('click', function () {
         document.getElementById('notification-container').style.display = 'none';
     });
 </script>
